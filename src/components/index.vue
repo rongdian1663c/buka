@@ -13,7 +13,7 @@
           <news-page/>
         </mt-tab-container-item>
         <mt-tab-container-item id="我的">
-          <news-page/>
+          <mine-page/>
         </mt-tab-container-item>
       </mt-tab-container>
     </div>
@@ -42,6 +42,7 @@
 
 <script>
 import NewsPage from "@/components/news/news-page";
+import MinePage from "@/components/mine/mine-page";
 import { Tabbar, TabItem } from 'mint-ui';
 import { TabContainer, TabContainerItem } from 'mint-ui';
 
@@ -54,8 +55,8 @@ Vue.component(TabContainerItem.name, TabContainerItem);
 
 export default {
   components: {//组件
-    NewsPage
-
+    NewsPage,
+    MinePage
   },
   name: "index",
   data() {/*声明变量*/
