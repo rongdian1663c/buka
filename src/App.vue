@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <index/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import index from './components/index.vue'
+import 'mint-ui/lib/style.css'
+import Vue from 'vue';
+import Mint from 'mint-ui';
+Vue.use(Mint);
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    index
   }
 }
 </script>
