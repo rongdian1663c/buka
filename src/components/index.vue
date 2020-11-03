@@ -20,18 +20,18 @@
 
     <!--底部tab-->
     <div>
-      <mt-tabbar v-model="selected">
+      <mt-tabbar v-model="selected" fixed>
         <mt-tab-item id="今日">
-          今日
+          <img slot="icon" src="../assets/img/ic_main_favorite_selected.png"> 今日
         </mt-tab-item>
         <mt-tab-item id="发现">
-          发现
+          <img slot="icon" src="../assets/img/ic_main_category_selected.png"> 发现
         </mt-tab-item>
         <mt-tab-item id="书架">
-          书架
+          <img slot="icon" src="../assets/img/ic_main_recommend_selected.png"> 书架
         </mt-tab-item>
         <mt-tab-item id="我的">
-          我的
+          <img slot="icon" src="../assets/img/ic_main_schedule_selected.png"> 我的
         </mt-tab-item>
       </mt-tabbar>
     </div>
