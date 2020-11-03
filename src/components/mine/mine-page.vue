@@ -39,8 +39,13 @@
 </template>
 
 <script>
+import CrossLine from "@/components/widget/cross-line";
+
 
 export default {
+  comments:{
+    CrossLine
+  },
   name: "mine-page",
   methods: {
     login() {

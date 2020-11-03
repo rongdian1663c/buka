@@ -8,7 +8,9 @@
 import Bookrack from "@/components/novel/bookrack";
 export default {
   name: "news-page",
-  components: {Bookrack}
+  components: {
+    Bookrack
+  }
 }
 </script>
 
