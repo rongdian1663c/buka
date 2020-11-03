@@ -29,7 +29,7 @@
         </mt-button>
 
         <!--分隔虚线-->
-        <cross-line/>
+      <!--暂时       <cross-line/>     -->
 
       </div>
 
@@ -39,12 +39,12 @@
 </template>
 
 <script>
-import CrossLine from "@/components/widget/cross-line";
+//暂时   import CrossLine from "@/components/widget/cross-line";
 
 
 export default {
   comments:{
-    CrossLine
+    //暂时   CrossLine
   },
   name: "mine-page",
   methods: {
