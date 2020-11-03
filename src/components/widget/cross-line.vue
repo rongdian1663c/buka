@@ -1,10 +1,11 @@
 <!-- 横线分隔条 组件 -->
 <template>
     <div class="cross-line"></div>
+
 </template>
 
 <script>
-import CrossLine from "@/components/widget/cross-line";
+
 
 export default {
   name:"cross-line",
