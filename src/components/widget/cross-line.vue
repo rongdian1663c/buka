@@ -9,9 +9,7 @@
 
 export default {
   name:"cross-line",
-  components: {
-    CrossLine
-  },
+  components: {},
   data() {
     return {};
   },
