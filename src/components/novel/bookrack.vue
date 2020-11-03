@@ -35,7 +35,7 @@ export default {
 name: "bookrack",
   data() {/*声明变量*/
     return {
-      selected:  1
+      selected:  "1"
     }
   }
 }

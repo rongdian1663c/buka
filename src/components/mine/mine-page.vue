@@ -31,20 +31,77 @@
         <!--分隔虚线-->
         <cross-line/>
 
+        <div class="status-bottom">
+          <div class="status-item">
+            <div>0</div>
+            <div>妖气币</div>
+          </div>
+          <div class="status-item">
+            <div>0</div>
+            <div>阅读券</div>
+          </div>
+          <div class="status-item">
+            <div>0</div>
+            <div>月票</div>
+          </div>
+        </div>
       </div>
-
     </div>
 
+    <!-- 重要的栏目 -->
+    <div class="important">
+      <cross-item name="我的订阅">
+        <i class="iconfont icon-shoucang1"></i>
+      </cross-item>
+
+      <cross-item name="我的封印图">
+        <i class="iconfont icon-zuji"></i>
+      </cross-item>
+
+      <cross-item name="我的优惠券" class="mine-item">
+        <i class="iconfont icon-dizhi"></i>
+      </cross-item>
+
+      <cross-item name="在线阅读免流量">
+        <i class="iconfont icon-money"></i>
+      </cross-item>
+
+      <cross-item name="帮助中心" class="mine-item">
+        <i class="iconfont icon-money"></i>
+      </cross-item>
+
+      <cross-item name="我要反馈">
+        <i class="iconfont icon-money"></i>
+      </cross-item>
+
+      <cross-item name="给我们评分">
+        <i class="iconfont icon-money"></i>
+      </cross-item>
+
+      <cross-item name="成为作者">
+        <i class="iconfont icon-money"></i>
+      </cross-item>
+
+      <cross-item name="首都网警">
+        <i class="iconfont icon-money"></i>
+      </cross-item>
+
+      <cross-item name="设置">
+        <i class="iconfont icon-money"></i>
+      </cross-item>
+    </div>
   </div>
 </template>
 
 <script>
 import CrossLine from "@/components/widget/cross-line";
+import CrossItem from "@/components/mine/view/cross-item";
 
 
 export default {
 
-  components:{
+  components: {
+    CrossItem,
     CrossLine
   },
   name: "mine-page",
@@ -64,56 +121,47 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
-
   .top {
     flex-direction: column;
     display: flex;
-
     .info {
       background-color: #06c1ae;
       width: 100%;
       flex: 1;
       display: flex;
       flex-direction: row;
-
       .avatar-wrapper {
         margin-top: 20px;
         margin-bottom: 10px;
         width: 70px;
         height: 70px;
         margin-left: 10px;
-
         img {
           width: 60px;
           height: 60px;
           border-radius: 50%;
         }
       }
-
       .name-wrapper {
         display: flex;
         flex-direction: column;
         height: 0px;
         margin-top: 35px;
-
         .name {
           font-size: 14px;
           color: #fff;
         }
-
         .desc {
           font-size: 10px;
           color: #fcfefe;
         }
       }
     }
-
     .operation {
       flex: 1;
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
-
       i {
         margin-top: 10px;
         margin-right: 15px;
@@ -123,27 +171,22 @@ export default {
       }
     }
   }
-
   .important {
     width: 100%;
   }
-
   .mine-item {
     margin-top: 10px;
   }
-
   .status {
     background-color: #fff;
     border-radius: 10px;
     margin-left: 10px;
     margin: 10px;
     padding: 10px;
-
     .status-top {
       margin-bottom: 10px;
       display: flex;
       flex-direction: row;
-
       .button {
         margin-right: 10px;
         height: 20px;
@@ -151,19 +194,16 @@ export default {
         font-size: 10px;
         border-radius: 20px;
       }
-
       .status-title {
         margin-left: 10px;
         font-size: 10px;
         flex: 1;
       }
     }
-
     .status-bottom {
       margin-top: 10px;
       display: flex;
       flex-direction: row;
-
       .status-item {
         width: 33%;
         font-size: 10px;
