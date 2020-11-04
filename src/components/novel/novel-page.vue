@@ -17,28 +17,39 @@
       </mt-swipe>
     </div>
 
-    <div v-for="(item, i) in comicLists" :key="i">
-      {{ item.name }}
-    </div>
+    <div v-for="(item,i) in comicLists" :key="i">
 
-    <!--    <div v-for="(item,i) in comicLists">-->
-    <!--      &lt;!&ndash;排行,vip,订阅等&ndash;&gt;-->
-    <!--     &lt;!&ndash; <div v-if="item.comicType == 11">-->
-    <!--        <div class="tag-item">-->
-    <!--          <div v-for="(tagItem,index) in item.comics">-->
-    <!--            <img :src="tagItem.cover" class="tag-img" @click="tabClick(index)">-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--      </div>&ndash;&gt;-->
-    <!--    </div>-->
+      <!--排行,vip,订阅等-->
+      <div v-if="item.comicType === 11">
+        <div class="tag-item">
+          <div v-for="(tagItem,index) in item.comics" :key="index">
+            <img :src="tagItem.cover" class="tag-img" @click="tabClick(index)">
+          </div>
+        </div>
+      </div>
+      <!--超人气作品-->
+      <div v-else-if="item.itemTitle == '超人气作品'" class="popular-works">
+        <div class="works-title-item" @click="more(item)">
+          <div class="works-title">{{item.itemTitle}}</div>
+          <div class="works-des">{{item.description}}
+            <i class="iconfont icon-more"></i>
+          </div>
+        </div>
+        <popular-works-item v-for="subItem in item.comics" :key="subItem.cover" :data="subItem" @itemClick="push(subItem.comicId)" />
+      </div>
+
+    </div>
 
   </div>
 </template>
 
 <script>
+import PopularWorksItem from "@/components/novel/view/popular-works-item";
 export default {
   name: "novel-page",
-  components: {},
+  components: {
+    PopularWorksItem
+  },
   created() {
     this.getData()
   },
@@ -50,7 +61,10 @@ export default {
   },
   methods: {
     getData() {
-      this.get("/v3/appV3_3/ios/phone/comic/getDetectList")
+      this.get("/v3/appV3_3/ios/phone/comic/getDetectList").then(res => {
+        this.galleryItems = res.returnData.galleryItems;
+        this.comicLists = res.returnData.comicLists;
+      });
     },
 
 
@@ -61,6 +75,57 @@ export default {
 };
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.swipe-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+}
+.banner-img {
+  width: 100%;
+}
+.tag-item {
+  display: flex;
+  flex-direction: row;
+}
+.header {
+  position: absolute;
+  padding: 10px;
+  width: 100%;
+  z-index: 2;
+  .search-img {
+    float: right;
+    margin-right: 20px;
+    height: 30px;
+    width: 30px;
+  }
+}
+.tag-img {
+  height: 100%;
+  width: 100%;
+}
+.popular-works {
+  flex: 1;
+  overflow: hidden;
+  // background-color: white;
+}
+.works-title-item {
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  background-color: white;
+  flex-direction: row;
+  .works-title {
+    flex: 1;
+    text-align: center;
+  }
+  .works-des {
+    color: gray;
+    font-size: 12px;
+    float: right;
+  }
+}
+.novel-page {
+  margin-bottom: 20px;
+}
 </style>
