@@ -7,8 +7,9 @@ import Index from "@/components/index";
 import RankPage from "@/components/novel/rank-page";
 
 import VipPage from "@/components/novel/vip-page";
-/*
+
 import SubscibePage from "@/components/novel/subscibe-page";
+/*
 import CommonPage from "@/components/novel/common-page";
 import ClassifyPage from "@/components/novel/classify-page";
 import ComicsDetailPage from "@/components/novel/comics-detail-page";
@@ -31,6 +32,9 @@ export default new Router({
             path: "/vip",
             component: VipPage
         },
-
+        {
+            path: "/subscibe",
+            component: SubscibePage
+        },
     ]
 });

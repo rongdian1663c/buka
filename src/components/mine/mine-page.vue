@@ -4,7 +4,7 @@
     <div class="top">
       <div class="info">
         <!--头像-->
-        <div class="head portrait">
+        <div class="avatar-wrapper">
           <img src="../../assets/img/lazyload.jpeg">
         </div>
 
@@ -22,11 +22,11 @@
       <!--vip狀態-->
       <div class="status">
         <div class="status-top">
-          vip状态:未开通
+          <div class="status-title">VIP状态:未开通</div>
+          <mt-button type="primary" size="small" class="button">
+            签到
+          </mt-button>
         </div>
-        <mt-button type="primary" size="small" class="button">
-          签到
-        </mt-button>
 
         <!--分隔虚线-->
         <cross-line/>
@@ -151,7 +151,7 @@ export default {
           font-size: 14px;
           color: #fff;
         }
-        .desc {
+        .synopsis {
           font-size: 10px;
           color: #fcfefe;
         }

@@ -21,17 +21,21 @@ export default {
 </script>
 
 <style>
-body {
+/*body {
   background-color: #ebebeb;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family:Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 
-  /*font-family: Arial, Helvetica, sans-serif;*/
-
+}*/
+body {
+  background-color: #ebebeb;
+}
+#app {
+  font-family: Arial, Helvetica, sans-serif;
 }
 </style>
