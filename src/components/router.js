@@ -5,8 +5,9 @@ Vue.use(Router);
 
 import Index from "@/components/index";
 import RankPage from "@/components/novel/rank-page";
-/*
+
 import VipPage from "@/components/novel/vip-page";
+/*
 import SubscibePage from "@/components/novel/subscibe-page";
 import CommonPage from "@/components/novel/common-page";
 import ClassifyPage from "@/components/novel/classify-page";
@@ -21,11 +22,15 @@ export default new Router({
     routes: [{
         path: "/",
         component: Index
+    },
+        {
+            path: "/rank",
+            component: RankPage
         },
         {
-         path: "/rank",
-         component: RankPage
-        }
+            path: "/vip",
+            component: VipPage
+        },
 
     ]
 });
