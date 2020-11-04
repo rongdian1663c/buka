@@ -37,7 +37,25 @@
         </div>
         <popular-works-item v-for="subItem in item.comics" :key="subItem.cover" :data="subItem" @itemClick="push(subItem.comicId)" />
       </div>
+      <!--新作推送-->
+      <div v-else class="popular-works">
+        <div class="works-title-item" @click="more(item)">
+          <div class="works-title">{{item.itemTitle}}</div>
+          <div class="works-des">{{item.description}}
+            <i class="iconfont icon-more"></i>
+          </div>
+        </div>
+        <div v-if="item.itemTitle == '活动'">
+          <common-item :data="item.comics[0]" @itemClick="push(subItem.comicId)" />
+        </div>
+        <div v-else>
+          <div v-for="(subItem,index) in item.comics" v-bind:key="index">
+            <common-item v-if="subItem.cover.includes('ubig') && index == 0" :data="subItem" @itemClick="push(subItem.comicId)" />
+            <common-item-count v-else :data="subItem " @itemClick="push(subItem.comicId)" />
 
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -45,9 +63,13 @@
 
 <script>
 import PopularWorksItem from "@/components/novel/view/popular-works-item";
+import CommonItem from "@/components/novel/view/common-item";
+import CommonItemCount from "@/components/novel/view/common-item-count";
 export default {
   name: "novel-page",
   components: {
+    CommonItemCount,
+    CommonItem,
     PopularWorksItem
   },
   created() {
