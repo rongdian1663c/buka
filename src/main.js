@@ -15,6 +15,10 @@ import '@/assets/ali-fonts/iconfont.css'
 //导入mint-ui
 import MintUI from "mint-ui";
 import "mint-ui/lib/style.css";
+import Vant from 'vant';
+import 'vant/lib/index.css';
+
+Vue.use(Vant);
 Vue.use(MintUI);
 
 new Vue({
