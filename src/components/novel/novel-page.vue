@@ -65,15 +65,17 @@
 import PopularWorksItem from "@/components/novel/view/popular-works-item";
 import CommonItem from "@/components/novel/view/common-item";
 import CommonItemCount from "@/components/novel/view/common-item-count";
+/*import CrossLine from "@/components/widget/cross-line";*/
 export default {
   name: "novel-page",
   components: {
-    CommonItemCount,
     CommonItem,
+    /*CrossLine,*/
+    CommonItemCount,
     PopularWorksItem
   },
   created() {
-    this.getData()
+    this.getData();
   },
   data() {
     return {
@@ -88,10 +90,42 @@ export default {
         this.comicLists = res.returnData.comicLists;
       });
     },
-
-
-    searchClick() {
-      this.$router.push({path: "/search-page"});
+    push(comicId) {
+      this.$router.push({
+        path: "/comics-detail",
+        query: { data: comicId + "" }
+      }); //comicId为int类型.直接传递为空
+    },
+    more(item) {
+      this.$router.push({
+        path: "/common",
+        query: { argValue: item.argValue, argName: item.argName }
+      });
+    },
+    tabClick(index) {
+      if (index == 0) {
+        this.$router.push({ path: "/rank" });
+      } else if (index == 1) {
+        this.$router.push({ path: "/vip" });
+      } else if (index == 2) {
+        this.$router.push({ path: "/subscibe" });
+      } else if (index == 3) {
+        this.$router.push({
+          path: "/common",
+          query: { argValue: "12", argName: "detect" }
+        });
+      } else if (index == 4) {
+        this.$router.push({ path: "/classify" });
+      }
+    },
+    click(img) {
+      this.push(img.ext[0].val);
+    },
+/*    video() {
+      this.$toast(video);
+    },*/
+    searchClick(){
+      this.$router.push({ path: "/search-page" });
     }
   }
 };
