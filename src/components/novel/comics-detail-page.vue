@@ -35,13 +35,13 @@
 <script>
 
 import { Tab, Tabs } from "vant";
-/*import CrossLine from "@/components/widget/cross-line";*/
+
 import ComicTabDetailPage from "@/components/novel/view/comic-tab-detail-page";
 import ComicTabDirectoryPage from "@/components/novel/view/comic-tab-directory-page";
 export default {
   name: "comics-detail",
   components: {
-/*    CrossLine,*/
+
     ComicTabDetailPage,
     ComicTabDirectoryPage,
     [Tab.name]: Tab,
