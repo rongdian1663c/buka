@@ -9,9 +9,11 @@ import RankPage from "@/components/novel/rank-page";
 import VipPage from "@/components/novel/vip-page";
 
 import SubscibePage from "@/components/novel/subscibe-page";
-/*
-import CommonPage from "@/components/novel/common-page";
+
+import RegenerateRage from "@/components/novel/regenerate-page";
+
 import ClassifyPage from "@/components/novel/classify-page";
+/*
 import ComicsDetailPage from "@/components/novel/comics-detail-page";
 import HtmlPage from "@/components/novel/html-page";
 import CommentPage from "@/components/novel/comment-page";
@@ -36,5 +38,13 @@ export default new Router({
             path: "/subscibe",
             component: SubscibePage
         },
+        {
+            path: "/regenerate-page",
+            component: RegenerateRage
+        },
+        {
+            path: "/classify-page",
+            component: ClassifyPage
+        }
     ]
 });

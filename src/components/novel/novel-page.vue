@@ -98,7 +98,7 @@ export default {
     },
     more(item) {
       this.$router.push({
-        path: "/common",
+        path: "/regenerate-page",
         query: { argValue: item.argValue, argName: item.argName }
       });
     },
@@ -111,11 +111,11 @@ export default {
         this.$router.push({ path: "/subscibe" });
       } else if (index == 3) {
         this.$router.push({
-          path: "/common",
+          path: "/regenerate-page",
           query: { argValue: "12", argName: "detect" }
         });
       } else if (index == 4) {
-        this.$router.push({ path: "/classify" });
+        this.$router.push({ path: "/classify-page" });
       }
     },
     click(img) {
