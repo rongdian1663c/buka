@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { Button } from "mint-ui";
+
 import CrossLine from "@/components/widget/cross-line";
 export default {
   components: {

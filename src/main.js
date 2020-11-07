@@ -25,4 +25,7 @@ new Vue({
   el: '#app',//全局样式
   router,
   render: h => h(App),
+  data: {
+    eventHub: new Vue()
+  }
 }).$mount('#app')

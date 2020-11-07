@@ -47,6 +47,7 @@ export default {
     [Tab.name]: Tab,
     [Tabs.name]: Tabs
   }, data() {
+
     return {
       comicid: this.$route.query.data,
       comic: Object,
@@ -57,7 +58,8 @@ export default {
   },
   created() {
     this.getData();
-    this.$root.eventHub.$on("refresh", target => {
+    this.$root.eventHub.$on('refresh',(target) => {
+
       this.comicid = target;
       this.getData()
     });

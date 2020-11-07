@@ -23,31 +23,31 @@ export default new Router({
         path: "/",
         component: Index
     },
-        {
-            path: "/rank",
-            component: RankPage
-        },
-        {
-            path: "/vip",
-            component: VipPage
-        },
-        {
-            path: "/subscibe",
-            component: SubscibePage
-        },
-        {
-            path: "/regenerate-page",
-            component: RegenerateRage
-        },
-        {
-            path: "/classify-page",
-            component: ClassifyPage
-        },{
-            path: "/comics-detail",
-            component: ComicsDetailPage
-        },{
-            path: "/common",
-            component: CommonPage
-        },
+    {
+        path: "/rank",
+        component: RankPage
+    },
+    {
+        path: "/vip",
+        component: VipPage
+    },
+    {
+        path: "/subscibe",
+        component: SubscibePage
+    },
+    {
+        path: "/regenerate-page",
+        component: RegenerateRage
+    },
+    {
+        path: "/classify-page",
+        component: ClassifyPage
+    }, {
+        path: "/comics-detail",
+        component: ComicsDetailPage
+    }, {
+        path: "/common",
+        component: CommonPage
+    },
     ]
 });

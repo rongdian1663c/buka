@@ -4,27 +4,27 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css' //这个样式必须引入
 import { MessageBox } from 'mint-ui';
 
-// 简单配置
+// 简单配置,最上方进度条
 NProgress.inc(0.2)
 NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false })
 
 axios.defaults.baseURL = '/api'
 // axios.defaults.baseURL = isProdMode ? 'http://app.u17.com' : '/api'
-axios.defaults.timeout = 10000
+axios.defaults.timeout = 10000//请求超时
 axios.defaults.headers = {
   'X-Requested-With': 'XMLHttpRequest',
   'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-}
+}//默认配置
 
-axios.interceptors.request.use(response => {
+axios.interceptors.request.use(response => {//请求发起时的拦截器
   NProgress.start()
   return response
 }, error => {
   return Promise.reject(error)
 })
 
-axios.interceptors.response.use(response => {
-  console.log(response);
+axios.interceptors.response.use(response => {//请求结束(响应)时的拦截器
+  console.log(response);//网页上拿到具体数据
   return response
 }, error => {
   return Promise.resolve(error.response)
